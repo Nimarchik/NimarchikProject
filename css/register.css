@@ -1,0 +1,224 @@
+.registers {
+	display: flex;
+	height: 100vh;
+}
+.registers__group-form {
+	width: 60%;
+	padding: 49px 45px 28px;
+	background-color: var(--bg-color-blackwhite);
+}
+
+.logo-reg {
+	width: 99px;
+	height: 53px;
+	margin-bottom: 52px;
+}
+
+.registers__img {
+	display: block;
+	width: 60%;
+	background: url('../img/reg-photo.jpg') no-repeat center;
+	background-size: cover;
+}
+
+.registers__group-form-btn-group {
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.registers__group-form-btn {
+	width: 50%;
+	border: none;
+	background-color: transparent;
+	color: #fff;
+	text-transform: uppercase;
+	border-bottom: 5px solid var(--color-disable);
+	font-family: var(--font);
+	font-size: 18px;
+	font-weight: 700;
+	transition: all 0.4s;
+}
+
+.registers__group-form-btn--active {
+	padding: 20px 0;
+	color: var(--color-text);
+	border-bottom: 5px solid var(--color-text);
+	border-width: 100%;
+	transition: color, border-bottom 0.4s;
+}
+
+.registers__group-form-content-item {
+	display: none;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	/* aspect-ratio: 1; */
+	height: 600px;
+	padding: 66px 0;
+	transform: translateX(-100%);
+	visibility: hidden;
+	transition: all 0.4s;
+}
+
+.registers__group-form-content-item--active {
+	display: flex;
+	visibility: visible;
+	transform: translateX(0);
+	transition: all 0.4s;
+}
+
+.registers__group-forms-title {
+	font-size: 16px;
+	font-family: var(--font);
+	color: #fff;
+	font-weight: 600;
+	line-height: 28px;
+	margin-bottom: 15px;
+}
+
+.registers__group-forms-login,
+.registers__group-forms-password,
+.registers__group-form-content-date {
+	width: 471px;
+	height: 62px;
+	margin-bottom: 20px;
+	padding: 0 20px;
+	color: #fff;
+	background-color: var(--bg-color);
+	border-radius: 15px;
+}
+.registers__group-forms-login::placeholder {
+	background: url('../img/Message.svg') no-repeat;
+	background-size: 16px 18px;
+	padding: 0 30px;
+	transition: all 0.5s;
+}
+
+.registers__group-forms-password::placeholder {
+	background: url('../img/Unlock.svg') no-repeat;
+	background-size: 16px 18px;
+	padding: 0 30px;
+	transform: translateX(0);
+	transition: all 0.5s;
+}
+.registers__group-forms-login:focus::placeholder,
+.registers__group-forms-password:focus::placeholder {
+	transform: translateX(-100%);
+	transition: all 0.5s;
+}
+.registers__group-forms-login-forgot {
+	display: block;
+	font-family: var(--font);
+	color: var(--color-text);
+}
+
+.registers__group-form-content-group {
+	display: flex;
+	flex-direction: column;
+	gap: 27px;
+}
+
+.registers__group-form-content-btn {
+	width: 511px;
+	height: 62px;
+	font-size: 16px;
+	color: #fff;
+	background: linear-gradient(to bottom, #763dcf, #5c24cc);
+	border-radius: 15px;
+	transition: all 0.4s;
+}
+
+.registers__group-form-content-btn:hover {
+	box-shadow: 0 0 15px var(--color-text);
+	transform: scale(1.05);
+	transition: all 0.4s;
+}
+
+.registers__group-form-content-link {
+	color: rgba(236, 236, 236, 0.6);
+	text-align: center;
+}
+
+.registers__group-form-content-item-title {
+	color: #fff;
+	font-size: 22px;
+	font-weight: 700;
+	margin-bottom: 50px;
+}
+
+.registers__group-form-content-name::placeholder {
+	background: url('../img/Profile.svg') no-repeat;
+}
+
+@media screen and (max-width: 1280px) {
+	.registers__group-form-content-register {
+		height: clamp(20vh, 50vh - 10%, 70vh);
+		overflow-y: auto;
+		margin-bottom: 40px;
+	}
+	.registers__group-forms {
+		margin-bottom: 40px;
+	}
+}
+@media screen and (max-width: 1024px) {
+	.registers__group-form {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.registers__img {
+		display: none;
+		width: 0;
+		background: none;
+	}
+
+	.registers__group-forms-title {
+		width: 60%;
+		font-size: clamp(1rem, 1rem + 0vw, 1rem);
+	}
+	.registers__group-form-content-item-group {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+@media screen and (max-width: 588px) {
+	.logo-reg {
+		margin: 0;
+	}
+	.registers__group-form {
+		padding: 20px;
+	}
+	.registers__group-forms,
+	.registers__group-forms input {
+		width: 100%;
+	}
+	.registers__group-form-content-btn {
+		width: 311px;
+	}
+	.registers__group-form-content-item {
+		padding: 30px 0;
+		height: 400px;
+	}
+	.registers__group-form-content-item-group,
+	.registers__group-form-content-register,
+	.registers__group-form-content-register input {
+		width: 100%;
+		gap: 20px;
+	}
+	.registers__group-form-content-register {
+		height: 500px;
+		overflow-y: auto;
+	}
+}
+
+@media screen and (max-width: 375px) {
+	.registers__group-form-content-register {
+		height: 50vh;
+		overflow-y: auto;
+	}
+}
